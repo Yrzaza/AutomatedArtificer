@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class UI_Exit_Button : MonoBehaviour
+{
+
+        public void buttonExitGame()
+        {
+            // quit the fuckin game
+            Application.Quit();
+
+            //make sure game is quit
+            Debug.Log("We leavin the game");
+
+        }
+    
+}
