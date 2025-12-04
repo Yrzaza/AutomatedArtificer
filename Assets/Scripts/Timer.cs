@@ -25,6 +25,8 @@ public class Timer : MonoBehaviour
             timerText.color = Color.red;
             gameIsOver=true;
             gameManager.gameOver();
+            Time.timeScale = 0;
+
         }
 
         //div time into minutes

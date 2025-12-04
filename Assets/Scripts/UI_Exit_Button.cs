@@ -21,6 +21,11 @@ public class UI_Exit_Button : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         //make sure game is reload
         Debug.Log("We reloadin");
+        //unpause the timer
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
     }
 
 }
