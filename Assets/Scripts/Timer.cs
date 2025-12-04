@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEditor;
 public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
@@ -10,8 +11,16 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //count up time
-        remainingTime -= Time.deltaTime;
+        if (remainingTime > 0)
+        {
+            remainingTime -= Time.deltaTime;
+        }
+        else if(remainingTime<0)
+        {
+            remainingTime = 0;
+            //game end state
+            timerText.color = Color.red;
+        }
 
         //div time into minutes
         int minutes = Mathf.FloorToInt(remainingTime/60);
@@ -20,5 +29,7 @@ public class Timer : MonoBehaviour
         //string output minute+seconds
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
+
     }
+
 }
