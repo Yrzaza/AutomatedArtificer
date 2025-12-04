@@ -7,6 +7,8 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime;
+    public GameManagerScript gameManager;
+    private bool gameIsOver;
 
     // Update is called once per frame
     void Update()
@@ -15,11 +17,14 @@ public class Timer : MonoBehaviour
         {
             remainingTime -= Time.deltaTime;
         }
-        else if(remainingTime<0)
+        else if(remainingTime<0 && !gameIsOver)
         {
+            gameIsOver=true;
             remainingTime = 0;
             //game end state
             timerText.color = Color.red;
+            gameIsOver=true;
+            gameManager.gameOver();
         }
 
         //div time into minutes
