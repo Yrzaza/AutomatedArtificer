@@ -1774,7 +1774,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _action: {fileID: -944628639613478452, guid: 7e44eae90bbf9d8469f80c91daeba9ff, type: 3}
   _speed: -120
-  _inverted: 1
+  _invertedX: 0
+  _invertedY: 1
 --- !u!65 &234403617
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6113,7 +6114,7 @@ Transform:
   m_GameObject: {fileID: 1461068910}
   serializedVersion: 2
   m_LocalRotation: {x: 0.013343008, y: 0.9859238, z: -0.09713915, w: 0.13542622}
-  m_LocalPosition: {x: -3.429, y: 1.744, z: 3.376}
+  m_LocalPosition: {x: -3.23, y: 1.818, z: 2.992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

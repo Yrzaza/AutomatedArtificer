@@ -27,7 +27,8 @@ public class Game_ObjRotation : MonoBehaviour
     private Camera _camera;
     //get rotation and if inverted
     [SerializeField] private float _speed;
-    [SerializeField] private bool _inverted;
+    [SerializeField] private bool _invertedX;
+    [SerializeField] private bool _invertedY;
     #endregion
 
 
@@ -48,8 +49,9 @@ public class Game_ObjRotation : MonoBehaviour
 
         MouseDelta *= _speed * Time.deltaTime;
 
-        transform.Rotate(Vector3.up * (_inverted ? 1 : -1), MouseDelta.x, Space.World);
-        transform.Rotate(Vector3.right * (_inverted ? -1 : 1), MouseDelta.y, Space.World);
+        transform.Rotate(Vector3.up * (_invertedY ? 1 : -1), MouseDelta.x, Space.World);
+        //need a new rotate for right because that isnt inverted
+        transform.Rotate(Vector3.right * (_invertedX ? -1 : 1), MouseDelta.y, Space.World);
 
 
     }
